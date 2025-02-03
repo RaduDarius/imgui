@@ -1,6 +1,6 @@
 ## folders
-bin
-bin-int
+bin/
+bin-*/
 
 ## OSX artifacts
 .DS_Store
