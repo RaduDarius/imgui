@@ -21,6 +21,7 @@ project "imgui"
         "imgui_draw.cpp",
         "imgui_demo.cpp",
         "imgui_widgets.cpp",
+        "imgui_tables.cpp",
     }
 
     filter "system:windows"
