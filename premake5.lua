@@ -5,7 +5,7 @@ project "imgui"
     language "C++"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-temp/" .. outputdir .. "/%{prj.name}")
 
     files {
         "imgui.h",
