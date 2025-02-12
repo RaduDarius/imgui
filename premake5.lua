@@ -3,6 +3,8 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 project "imgui"
     kind "StaticLib"
     language "C++"
+    cppdialect "C++17"
+    staticruntime "On"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-temp/" .. outputdir .. "/%{prj.name}")
@@ -26,8 +28,13 @@ project "imgui"
 
     filter "system:windows"
         systemversion "latest"
-        cppdialect "C++17"
-        staticruntime "On"
 
-    filter { "system:windows", "configurations:Release" }
-        buildoptions "/MT"
+        defines { "_CRT_SECURE_NO_WARNINGS" }
+
+    filter { "configurations:Debug" }
+        runtime "Debug"
+        symbols "On"
+
+    filter { "configurations:Release" }
+        runtime "Release"
+        optimize "On"
