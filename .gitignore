@@ -1,3 +1,7 @@
+# The canonical out-of-tree build subdirectory
+bin/
+bin-*/
+
 ## OSX artifacts
 .DS_Store
 
